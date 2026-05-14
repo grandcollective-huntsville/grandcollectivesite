@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grand Collective Content Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f7f2ea;
+        --cream: #fffaf2;
+        --ink: #24231f;
+        --olive: #303822;
+        --clay: #a56752;
+        --muted: #6f6a62;
+        --line: rgba(36, 35, 31, 0.13);
+        --shadow: 0 24px 60px rgba(35, 29, 22, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, system-ui, sans-serif;
+        line-height: 1.55;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      header {
+        padding: 22px 0;
+        border-bottom: 1px solid var(--line);
+        background: rgba(247, 242, 234, 0.95);
+        position: sticky;
+        top: 0;
+        z-index: 4;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand,
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", Georgia, serif;
+      }
+
+      .brand {
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      section {
+        padding: clamp(56px, 8vw, 88px) 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.58fr);
+        gap: clamp(32px, 6vw, 70px);
+        align-items: center;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(3.6rem, 9vw, 7rem);
+        line-height: 0.9;
+      }
+
+      h2 {
+        margin: 0 0 24px;
+        font-size: clamp(2.4rem, 5vw, 4.2rem);
+        line-height: 1;
+      }
+
+      h3 {
+        margin: 0 0 12px;
+        font-size: 2rem;
+      }
+
+      p {
+        color: var(--muted);
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        color: var(--clay);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 14px;
+        padding: 0 22px;
+        background: var(--olive);
+        color: #fff;
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .image-card {
+        aspect-ratio: 4 / 5;
+        box-shadow: var(--shadow);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .card,
+      .panel {
+        background: var(--cream);
+        padding: 26px;
+        box-shadow: 0 16px 40px rgba(32, 28, 22, 0.1);
+      }
+
+      .card img {
+        height: 300px;
+        margin: -26px -26px 24px;
+        width: calc(100% + 52px);
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 20px 0;
+      }
+
+      .chip {
+        display: inline-flex;
+        min-height: 32px;
+        align-items: center;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: #eadbc9;
+        color: var(--olive);
+        font-size: 0.86rem;
+        font-weight: 800;
+      }
+
+      .profile {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.42fr) minmax(0, 1fr);
+        gap: clamp(30px, 5vw, 56px);
+        align-items: start;
+      }
+
+      .services {
+        display: grid;
+        gap: 12px;
+        margin-top: 26px;
+      }
+
+      .service-row,
+      .hours-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 18px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .service-row:last-child,
+      .hours-row:last-child {
+        border-bottom: 0;
+      }
+
+      .price {
+        color: var(--clay);
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .portfolio {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 26px;
+      }
+
+      .portfolio img {
+        height: 300px;
+        box-shadow: var(--shadow);
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .grid,
+        .profile,
+        .portfolio,
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+
+        .portfolio img {
+          height: auto;
+          aspect-ratio: 4 / 5;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="shell topbar">
+        <a class="brand" href="index.html">GRAND COLLECTIVE</a>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#team">Team</a>
+          <a href="#abbie">Abbie</a>
+          <a href="#mariah">Mariah</a>
+          <a href="#mary">Mary Elizabeth</a>
+          <a href="#reshae">Reshae</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home">
+        <div class="shell hero">
+          <div>
+            <p class="eyebrow">More than a salon</p>
+            <h1>Elevated Hair. Inspired by You.</h1>
+            <p>Luxury hair care in a relaxing, modern space designed with you in mind.</p>
+            <p>
+              Grounded in craft · Refined in technique · Artistry without compromise · Noteworthy standard · Defined by
+              discipline
+            </p>
+            <a class="button" href="#team">Meet the Team</a>
+          </div>
+          <img class="image-card" src="assets/salon-lounge.jpeg" alt="Grand Collective salon lounge" />
+        </div>
+      </section>
+
+      <section>
+        <div class="shell two-col">
+          <img class="image-card" src="assets/salon-styling-station.jpeg" alt="Grand Collective styling station" />
+          <div>
+            <p class="eyebrow">About Us</p>
+            <h2>A Salon Experience That Feels Like Home</h2>
+            <p>
+              At Grand Collective, beautiful hair starts with how you feel. Our goal is to create a welcoming, elevated
+              experience where you can relax, feel confident, and leave feeling like your best self.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="team">
+        <div class="shell">
+          <p class="eyebrow">Meet the Collective</p>
+          <h2>Choose Your Stylist</h2>
+          <div class="grid">
+            <article class="card">
+              <img
+                src="https://scontent-atl3-3.xx.fbcdn.net/v/t51.82787-15/645828600_18410996041132107_3146058509000540786_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=li1byOD70IgQ7kNvwHXrajr&_nc_oc=AdpPL_FQhlfdvkfmpKuUC0N3AaipbnE9xG3eQyv5bgI722FaXKbrHOtxYbBy1-VGNukWis0WMuGWxEHHqZU8U7DI&_nc_zt=23&_nc_ht=scontent-atl3-3.xx&_nc_gid=JzuvWcwWNHqsFKh1lFBW8g&_nc_ss=7b2a8&oh=00_Af6SgL-Ng6SJJpRJ5q_Zm3h-JYjQXnUCcD03-8H7LQjuSw&oe=69FB43D0"
+                alt="Abbie Brown"
+              />
+              <p class="eyebrow">Founder & Stylist</p>
+              <h3>Abbie Brown</h3>
+              <p>Color, cuts, and extensions with a warm, empowering guest experience.</p>
+              <div class="chips"><span class="chip">Color</span><span class="chip">Cuts</span><span class="chip">Extensions</span></div>
+              <a class="button" href="#abbie">View Profile</a>
+            </article>
+
+            <article class="card">
+              <img
+                src="https://static.glossgenius.com/public/salon/a362d06cf3b8d1f4d2407f209b856b22dd4c6604/website_cover_image/cc48721b453669efaa2fc323469e6ce3.jpeg"
+                alt="Mariah Brasel hair work"
+              />
+              <p class="eyebrow">Stylist</p>
+              <h3>Mariah Brasel</h3>
+              <p>Personalized hair services designed around each guest’s goals, lifestyle, and natural beauty.</p>
+              <div class="chips"><span class="chip">Color</span><span class="chip">Cuts</span><span class="chip">Styling</span></div>
+              <a class="button" href="#mariah">View Profile</a>
+            </article>
+
+            <article class="card">
+              <img src="assets/mary-elizabeth-brooks.png" alt="Mary Elizabeth Brooks" />
+              <p class="eyebrow">Stylist</p>
+              <h3>Mary Elizabeth Brooks</h3>
+              <p>Personalized hair services in a relaxed, thoughtful salon experience.</p>
+              <div class="chips"><span class="chip">Color</span><span class="chip">Cuts</span><span class="chip">Styling</span></div>
+              <a class="button" href="#mary">View Profile</a>
+            </article>
+
+            <article class="card">
+              <img
+                src="https://static.glossgenius.com/public/user/c93a3cfb42917dda00676655c4abd8143cd4c05f/avatar/fdd5fae44b6afadf46281461badc372c.jpeg"
+                alt="Reshae Simmons"
+              />
+              <p class="eyebrow">Stylist</p>
+              <h3>Reshae Simmons</h3>
+              <p>Personalized hair services with a client-first approach and refined finish.</p>
+              <div class="chips"><span class="chip">Color</span><span class="chip">Cuts</span><span class="chip">Styling</span></div>
+              <a class="button" href="#reshae">View Profile</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="abbie">
+        <div class="shell profile">
+          <img
+            class="image-card"
+            src="https://scontent-atl3-3.xx.fbcdn.net/v/t51.82787-15/645828600_18410996041132107_3146058509000540786_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=li1byOD70IgQ7kNvwHXrajr&_nc_oc=AdpPL_FQhlfdvkfmpKuUC0N3AaipbnE9xG3eQyv5bgI722FaXKbrHOtxYbBy1-VGNukWis0WMuGWxEHHqZU8U7DI&_nc_zt=23&_nc_ht=scontent-atl3-3.xx&_nc_gid=JzuvWcwWNHqsFKh1lFBW8g&_nc_ss=7b2a8&oh=00_Af6SgL-Ng6SJJpRJ5q_Zm3h-JYjQXnUCcD03-8H7LQjuSw&oe=69FB43D0"
+            alt="Abbie Brown"
+          />
+          <div>
+            <p class="eyebrow">Founder & Stylist</p>
+            <h2>Abbie Brown</h2>
+            <p>
+              Abbie is a highly experienced hairstylist with 10 years behind the chair, specializing in precision
+              haircutting, custom hair color, and extensions. Known for creating beautiful, personalized results for
+              clients of all ages, she has built a loyal, full clientele over the years, many of whom have become like
+              family.
+            </p>
+            <p>
+              While her everyday guests are at the heart of what she loves most, Abbie has also had the privilege of
+              working beyond the salon in editorial and fashion settings.
+            </p>
+            <div class="panel">
+              <h3>Services</h3>
+              <div class="services">
+                <div class="service-row"><strong>Full Custom Color</strong><span class="price">$350</span></div>
+                <div class="service-row"><strong>Partial Custom Color</strong><span class="price">$280</span></div>
+                <div class="service-row"><strong>Custom Haircut</strong><span class="price">$100</span></div>
+                <div class="service-row"><strong>Weft Extension Installation</strong><span class="price">$150/row</span></div>
+              </div>
+            </div>
+            <div class="portfolio">
+              <img src="assets/abbie-portfolio-editorial-blonde.jpg" alt="Editorial blonde hair styled by Abbie Brown" />
+              <img src="assets/abbie-portfolio-split-color.jpg" alt="Split color by Abbie Brown" />
+              <img src="assets/abbie-portfolio-long-blonde.jpg" alt="Long blonde waves by Abbie Brown" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mariah">
+        <div class="shell profile">
+          <img
+            class="image-card"
+            src="https://static.glossgenius.com/public/salon/a362d06cf3b8d1f4d2407f209b856b22dd4c6604/website_cover_image/cc48721b453669efaa2fc323469e6ce3.jpeg"
+            alt="Mariah Brasel"
+          />
+          <div>
+            <p class="eyebrow">Stylist</p>
+            <h2>Mariah Brasel</h2>
+            <p>Personalized hair services designed around each guest’s goals, lifestyle, and natural beauty.</p>
+            <a class="button" href="https://mariahbrasel.glossgenius.com/services" target="_blank" rel="noopener noreferrer">Book Mariah</a>
+            <div class="panel">
+              <h3>Services</h3>
+              <div class="services">
+                <div class="service-row"><strong>Extension Consult</strong><span class="price">$0</span></div>
+                <div class="service-row"><strong>Color Consultation</strong><span class="price">$25</span></div>
+                <div class="service-row"><strong>Custom Color</strong><span class="price">$85+</span></div>
+                <div class="service-row"><strong>Full Foil</strong><span class="price">$150+</span></div>
+                <div class="service-row"><strong>Haircut with Shampoo/Blow Dry</strong><span class="price">$75</span></div>
+              </div>
+            </div>
+            <div class="portfolio">
+              <img
+                src="https://static.glossgenius.com/public/portfolioimage/21bd41799e53db3c8dc91d9ecd36a8bee594989e/image/medium-06529530df97211ab0835ce8db86fe33.jpeg"
+                alt="Hair by Mariah Brasel"
+              />
+              <img
+                src="https://static.glossgenius.com/public/portfolioimage/04c5f156e5b952afe01df198da16b0224d9a7205/image/medium-8fd4d2028b8d2ee472edebd73354b1ce.jpeg"
+                alt="Hair by Mariah Brasel"
+              />
+              <img
+                src="https://static.glossgenius.com/public/portfolioimage/8ce8f6565a3b106f69341359349169f984e360fa/image/medium-00bf606ba8c996ef658dcc3fbd1c6bfd.jpeg"
+                alt="Custom color by Mariah Brasel"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mary">
+        <div class="shell profile">
+          <img class="image-card" src="assets/mary-elizabeth-brooks.png" alt="Mary Elizabeth Brooks" />
+          <div>
+            <p class="eyebrow">Stylist</p>
+            <h2>Mary Elizabeth Brooks</h2>
+            <p>Personalized hair services in a relaxed, thoughtful salon experience.</p>
+            <div class="panel">
+              <h3>Services</h3>
+              <div class="services">
+                <div class="service-row"><strong>Base Color Root Touch Up</strong><span class="price">$135</span></div>
+                <div class="service-row"><strong>Partial Highlight</strong><span class="price">$195</span></div>
+                <div class="service-row"><strong>Full Highlight</strong><span class="price">$235</span></div>
+                <div class="service-row"><strong>Mini Highlight</strong><span class="price">$165</span></div>
+                <div class="service-row"><strong>Women’s Haircut & Blow-Dry</strong><span class="price">$70</span></div>
+                <div class="service-row"><strong>Complementary Consultation</strong><span class="price">$0</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reshae">
+        <div class="shell profile">
+          <img
+            class="image-card"
+            src="https://static.glossgenius.com/public/user/c93a3cfb42917dda00676655c4abd8143cd4c05f/avatar/fdd5fae44b6afadf46281461badc372c.jpeg"
+            alt="Reshae Simmons"
+          />
+          <div>
+            <p class="eyebrow">Stylist</p>
+            <h2>Reshae Simmons</h2>
+            <p>
+              Hi, I’m Reshae! I’m a wife, mom of two amazing girls, and a stylist who truly found her way into this
+              industry through life experiences. Every day I’m learning, growing, and falling more in love with this
+              craft.
+            </p>
+            <div class="panel">
+              <h3>Services</h3>
+              <div class="services">
+                <div class="service-row"><strong>The Weekly Reset</strong><span class="price">$100</span></div>
+                <div class="service-row"><strong>Shampoo & Blowdry</strong><span class="price">$30</span></div>
+                <div class="service-row"><strong>Heat Styling</strong><span class="price">$10+</span></div>
+                <div class="service-row"><strong>Partial Custom Color</strong><span class="price">$100</span></div>
+                <div class="service-row"><strong>Full Custom Color</strong><span class="price">$150</span></div>
+                <div class="service-row"><strong>Women’s Hair Cut</strong><span class="price">$35</span></div>
+              </div>
+            </div>
+            <div class="portfolio">
+              <img src="assets/reshae-portfolio-blonde-waves.png" alt="Blonde waves by Reshae Simmons" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

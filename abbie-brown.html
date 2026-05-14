@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abbie Brown | Grand Collective</title>
+    <meta
+      name="description"
+      content="Meet Abbie Brown, founder and stylist at Grand Collective. Explore her bio, services, pricing, portfolio, and social links."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f7f2ea;
+        --cream: #fffaf2;
+        --ink: #24231f;
+        --olive: #303822;
+        --sage: #687452;
+        --clay: #a56752;
+        --sand: #e7d8c4;
+        --muted: #6f6a62;
+        --line: rgba(36, 35, 31, 0.13);
+        --shadow: 0 24px 60px rgba(35, 29, 22, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, system-ui, sans-serif;
+        line-height: 1.55;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        padding: 22px 0;
+        border-bottom: 1px solid var(--line);
+        background: rgba(247, 242, 234, 0.94);
+      }
+
+      .topbar-inner,
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .brand {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.35rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border: 1px solid var(--olive);
+        background: var(--olive);
+        color: #fff;
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        background: var(--clay);
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--olive);
+      }
+
+      .button.secondary:hover {
+        background: var(--olive);
+        color: #fff;
+      }
+
+      .hero {
+        padding: clamp(52px, 8vw, 96px) 0;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1fr);
+        gap: clamp(34px, 6vw, 72px);
+        align-items: center;
+      }
+
+      .portrait {
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: center 30%;
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        color: var(--clay);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(4rem, 10vw, 7.4rem);
+        line-height: 0.9;
+      }
+
+      h2 {
+        margin: 0 0 26px;
+        font-size: clamp(2.3rem, 5vw, 4.2rem);
+        line-height: 1;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 1.7rem;
+      }
+
+      .lead {
+        max-width: 640px;
+        color: var(--muted);
+        font-size: 1.15rem;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin: 28px 0;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0 13px;
+        border-radius: 999px;
+        background: #eadbc9;
+        color: var(--olive);
+        font-size: 0.86rem;
+        font-weight: 800;
+      }
+
+      .section {
+        padding: clamp(58px, 8vw, 92px) 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .bio {
+        display: grid;
+        grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.38fr);
+        gap: clamp(30px, 5vw, 58px);
+      }
+
+      .bio p {
+        margin-top: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .panel {
+        background: var(--cream);
+        padding: clamp(24px, 4vw, 38px);
+        box-shadow: 0 16px 40px rgba(32, 28, 22, 0.1);
+      }
+
+      .service-list {
+        display: grid;
+        gap: 34px;
+      }
+
+      .service-group {
+        display: grid;
+        gap: 14px;
+      }
+
+      .service-group h3 {
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .service-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+
+      .service-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 18px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .service-row:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .service-row strong {
+        display: block;
+      }
+
+      .service-row span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .price {
+        color: var(--clay);
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .portfolio {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .portfolio img {
+        height: 390px;
+        object-fit: cover;
+        box-shadow: var(--shadow);
+      }
+
+      .portfolio img:nth-child(1),
+      .portfolio img:nth-child(2) {
+        grid-column: span 1;
+        object-position: center 34%;
+      }
+
+      .portfolio img:nth-child(3),
+      .portfolio img:nth-child(4),
+      .portfolio img:nth-child(5) {
+        object-position: center 28%;
+      }
+
+      .portfolio img:nth-child(6) {
+        object-position: center 42%;
+      }
+
+      .feature-credit {
+        margin-top: 22px;
+        background: var(--cream);
+        padding: clamp(24px, 4vw, 36px);
+        box-shadow: 0 16px 40px rgba(32, 28, 22, 0.1);
+      }
+
+      .feature-credit p {
+        margin: 12px 0 22px;
+        color: var(--muted);
+      }
+
+      .policy-card {
+        max-width: 760px;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.58fr) minmax(0, 0.42fr);
+        gap: 22px;
+      }
+
+      .hours-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .hours-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hours-row:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .hours-row strong {
+        color: var(--ink);
+      }
+
+      .socials {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      footer {
+        padding: 34px 0;
+        color: var(--muted);
+      }
+
+      @media (max-width: 800px) {
+        .topbar-inner,
+        .actions,
+        .hero-grid,
+        .bio,
+        .info-grid,
+        .portfolio {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar-inner,
+        .actions {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .portfolio img {
+          height: auto;
+          aspect-ratio: 4 / 5;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <a class="brand" href="index.html">GRAND COLLECTIVE</a>
+        <div class="actions">
+          <a class="button secondary" href="index.html#team">Back to Team</a>
+          <a class="button" href="https://grandcollectivehuntsville.glossgenius.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnZsfAuqTr_RcY8JZEIVzweWNhP7jleYzl6DCCFfzknb7yKL3kQBgJH4zd3f0_aem_VkhIuakeYxaHfkdkt6CN2g" target="_blank" rel="noopener noreferrer">Book Now</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="shell hero-grid">
+          <img
+            class="portrait"
+            src="https://scontent-atl3-3.xx.fbcdn.net/v/t51.82787-15/645828600_18410996041132107_3146058509000540786_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=li1byOD70IgQ7kNvwHXrajr&_nc_oc=AdpPL_FQhlfdvkfmpKuUC0N3AaipbnE9xG3eQyv5bgI722FaXKbrHOtxYbBy1-VGNukWis0WMuGWxEHHqZU8U7DI&_nc_zt=23&_nc_ht=scontent-atl3-3.xx&_nc_gid=JzuvWcwWNHqsFKh1lFBW8g&_nc_ss=7b2a8&oh=00_Af6SgL-Ng6SJJpRJ5q_Zm3h-JYjQXnUCcD03-8H7LQjuSw&oe=69FB43D0"
+            alt="Abbie Brown"
+          />
+          <div>
+            <p class="eyebrow">Founder & Stylist</p>
+            <h1>Abbie Brown</h1>
+            <p class="lead">
+              Color, cuts, and extensions with a thoughtful, empowering experience in the chair.
+            </p>
+            <div class="chips" aria-label="Specialties">
+              <span class="chip">Color</span>
+              <span class="chip">Cuts</span>
+              <span class="chip">Extensions</span>
+            </div>
+            <div class="actions">
+              <a class="button" href="https://grandcollectivehuntsville.glossgenius.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnZsfAuqTr_RcY8JZEIVzweWNhP7jleYzl6DCCFfzknb7yKL3kQBgJH4zd3f0_aem_VkhIuakeYxaHfkdkt6CN2g" target="_blank" rel="noopener noreferrer">Book Abbie</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell bio">
+          <div>
+            <p class="eyebrow">Bio</p>
+            <h2>Behind the Chair</h2>
+            <p>
+              Abbie is a highly experienced hairstylist with 10 years behind the chair, specializing in precision
+              haircutting, custom hair color, and extensions. Known for creating beautiful, personalized results for
+              clients of all ages, she has built a loyal, full clientele over the years, many of whom have become like
+              family.
+            </p>
+            <p>
+              While her everyday guests are at the heart of what she loves most, Abbie has also had the privilege of
+              working beyond the salon in editorial and fashion settings. Her experience includes magazine work, model
+              shoots, reality television personalities, fashion icons, and even award-winning opera performers.
+            </p>
+            <p>
+              Whether she’s creating a lived-in blonde, a seamless extension transformation, or the perfect signature
+              cut, Abbie brings creativity, technical expertise, and genuine passion to every guest who sits in her
+              chair.
+            </p>
+          </div>
+
+          <aside class="panel">
+            <p class="eyebrow">Social Media</p>
+            <h3>Connect</h3>
+            <div class="socials" style="margin-top: 22px">
+              <a
+                class="button secondary"
+                href="https://www.instagram.com/abbiebrownstylist/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+              <a
+                class="button secondary"
+                href="https://www.tiktok.com/@abbiebrownstylist"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                TikTok
+              </a>
+              <a
+                class="button secondary"
+                href="https://www.facebook.com/abbiebrownstylist/?ref=NONE_xav_ig_profile_page_web"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Facebook
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow">Services + Pricing</p>
+          <h2>Book With Abbie</h2>
+          <div class="panel service-list">
+            <div class="service-group">
+              <h3>Custom Color</h3>
+              <p class="service-note">Gloss, haircut, and blowdry included. Additional time is $80 per hour after the first 3 hours.</p>
+              <div class="service-row">
+                <div>
+                  <strong>Full Custom Color</strong>
+                  <span>Full dimensional color service.</span>
+                </div>
+                <div class="price">$350</div>
+              </div>
+              <div class="service-row">
+                <div>
+                  <strong>Partial Custom Color</strong>
+                  <span>Partial dimensional color service.</span>
+                </div>
+                <div class="price">$280</div>
+              </div>
+            </div>
+
+            <div class="service-group">
+              <h3>A La Cárte</h3>
+              <div class="service-row"><div><strong>Base Color Root Retouch</strong></div><div class="price">$125</div></div>
+              <div class="service-row"><div><strong>All Over Color</strong></div><div class="price">$175</div></div>
+              <div class="service-row"><div><strong>Color or Clear Gloss</strong></div><div class="price">$60</div></div>
+              <div class="service-row"><div><strong>Root Smudge</strong></div><div class="price">$70</div></div>
+              <div class="service-row"><div><strong>Blowout Style</strong></div><div class="price">$60</div></div>
+              <div class="service-row">
+                <div><strong>Custom Haircut</strong><span>$75 with color services.</span></div>
+                <div class="price">$100</div>
+              </div>
+              <div class="service-row"><div><strong>Small Kids</strong></div><div class="price">$55</div></div>
+              <div class="service-row"><div><strong>Princess/Fairy Hair Add-On</strong></div><div class="price">$45</div></div>
+              <div class="service-row"><div><strong>Deep Conditioning</strong></div><div class="price">$25</div></div>
+              <div class="service-row"><div><strong>Olaplex</strong></div><div class="price">$50</div></div>
+              <div class="service-row"><div><strong>K18</strong></div><div class="price">$50</div></div>
+              <div class="service-row"><div><strong>Six Week Keratin Smoothing</strong></div><div class="price">$75</div></div>
+              <div class="service-row"><div><strong>Permanent Keratin Smoothing</strong></div><div class="price">$250+</div></div>
+              <div class="service-row"><div><strong>Special Occasion Formal Style</strong></div><div class="price">$150</div></div>
+              <div class="service-row"><div><strong>Bridal Style</strong></div><div class="price">$250</div></div>
+              <div class="service-row"><div><strong>Travel Fee Within 45 Miles</strong></div><div class="price">$100</div></div>
+              <div class="service-row"><div><strong>Eyebrow Wax</strong></div><div class="price">$20</div></div>
+              <div class="service-row"><div><strong>Face Wax</strong></div><div class="price">$55</div></div>
+              <div class="service-row"><div><strong>Lip Wax</strong></div><div class="price">$15</div></div>
+              <div class="service-row"><div><strong>Eyebrow Wax with Tint</strong></div><div class="price">$40</div></div>
+            </div>
+
+            <div class="service-group">
+              <h3>Hair Extension Services</h3>
+              <p class="service-note">
+                Pricing for extension services is install only. Pricing does not include hair for installation.
+                Consultations are free.
+              </p>
+            </div>
+
+            <div class="service-group">
+              <h3>Tape-In Extension Installation</h3>
+              <p class="service-note">
+                Gentle on the hair with medical-grade adhesive. Wefts come pre-taped and require no tools or heat.
+                Installation can be done in as little as 30 minutes. Tape-ins create a seamless blend to add volume and
+                length. This install lasts 4-8 weeks between move-up appointments with proper care.
+              </p>
+              <div class="service-row"><div><strong>Install</strong></div><div class="price">$250</div></div>
+              <div class="service-row"><div><strong>Removal</strong></div><div class="price">$75</div></div>
+              <div class="service-row"><div><strong>Removal and Retape</strong></div><div class="price">$100</div></div>
+            </div>
+
+            <div class="service-group">
+              <h3>Cold Fusion I-Tip/Flat Tip Extension Installation</h3>
+              <p class="service-note">
+                An I-tip strand-by-strand method where each strand is attached with a non-slip bead. No glue or heat is
+                required. Flat tip combines the benefits of I-Link and Tape-In, offering a flat, comfortable feel with
+                360° movement with each individual strand.
+              </p>
+              <div class="service-row"><div><strong>Volume</strong></div><div class="price">$500</div></div>
+              <div class="service-row"><div><strong>Volume and Length</strong></div><div class="price">$700</div></div>
+              <div class="service-row"><div><strong>Maintenance Every 2-4 Months</strong></div><div class="price">$420</div></div>
+              <div class="service-row"><div><strong>Removal</strong></div><div class="price">$100</div></div>
+            </div>
+
+            <div class="service-group">
+              <h3>Keratin Hot Fusion Extension Install</h3>
+              <p class="service-note">
+                The only natural fusion method. Keratin tip hair extensions are bonded to the hair using a
+                strand-by-strand method, allowing 360° of natural hair movement. This method is perfect for all hairdos,
+                whether hair is worn up or down. Made with 100% Remy human hair.
+              </p>
+              <div class="service-row">
+                <div><strong>Hair Extensions</strong><span>Per pack of 20 strands.</span></div>
+                <div class="price">$180</div>
+              </div>
+              <div class="service-row"><div><strong>Removal</strong></div><div class="price">$125/hour</div></div>
+            </div>
+
+            <div class="service-group">
+              <h3>Weft Extension Installation</h3>
+              <p class="service-note">
+                Beaded weft extensions do not use heat, glue, tape, or chemicals during the installation process.
+                Instead, your hair is paired with the extension and sewn into place in a way that will not damage your
+                hair follicle.
+              </p>
+              <div class="service-row">
+                <div><strong>Installation</strong><span>Per row installed.</span></div>
+                <div class="price">$150</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow">Client Info</p>
+          <h2>Hours + Policies</h2>
+          <div class="info-grid">
+            <div class="panel">
+              <h3>Business Hours</h3>
+              <div class="hours-list">
+                <div class="hours-row"><strong>Monday</strong><span>Closed</span></div>
+                <div class="hours-row"><strong>Tuesday</strong><span>9 AM - 6 PM</span></div>
+                <div class="hours-row"><strong>Wednesday</strong><span>9 AM - 6 PM</span></div>
+                <div class="hours-row"><strong>Thursday</strong><span>9 AM - 6 PM</span></div>
+                <div class="hours-row"><strong>Friday</strong><span>9 AM - 6 PM</span></div>
+                <div class="hours-row"><strong>Saturday</strong><span>Closed</span></div>
+                <div class="hours-row"><strong>Sunday</strong><span>Closed</span></div>
+              </div>
+            </div>
+            <div class="panel policy-card">
+              <h3>Cancellation Policy</h3>
+              <p>
+                I charge a 30% cancellation fee for any no-shows or cancellations within 24 hours of the scheduled
+                appointment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Abbie’s Work</h2>
+          <div class="portfolio">
+            <img src="assets/abbie-portfolio-editorial-blonde.jpg" alt="Editorial blonde hair styled by Abbie Brown" />
+            <img src="assets/abbie-portfolio-split-color.jpg" alt="Split black and platinum hair color by Abbie Brown" />
+            <img src="assets/abbie-portfolio-soft-blonde-side.jpg" alt="Soft dimensional blonde color by Abbie Brown" />
+            <img src="assets/abbie-portfolio-soft-blonde-front.jpg" alt="Dimensional blonde haircut and color by Abbie Brown" />
+            <img src="assets/abbie-portfolio-long-blonde.jpg" alt="Long blonde waves and color by Abbie Brown" />
+            <img src="assets/salon-styling-station.jpeg" alt="Grand Collective styling station" />
+          </div>
+          <div class="feature-credit">
+            <p class="eyebrow">Featured In</p>
+            <h3>DSCENE Style Stories: Lacquer</h3>
+            <p>
+              Abbie Brown was credited as hair and makeup artist for “Lacquer,” photographed by Janna Park and styled by
+              Brittney Flanders for DSCENE Style Stories.
+            </p>
+            <a
+              class="button secondary"
+              href="https://www.designscene.net/2022/04/lacquer-janna-park.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Feature
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell">© 2026 Grand Collective. All rights reserved.</div>
+    </footer>
+  </body>
+</html>

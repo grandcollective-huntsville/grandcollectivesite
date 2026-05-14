@@ -1,0 +1,257 @@
+/* Grand Collective Squarespace Custom CSS */
+
+:root {
+  --gc-paper: #f7f2ea;
+  --gc-cream: #fffaf2;
+  --gc-ink: #24231f;
+  --gc-olive: #303822;
+  --gc-sage: #687452;
+  --gc-clay: #a56752;
+  --gc-sand: #e7d8c4;
+  --gc-muted: #6f6a62;
+  --gc-line: rgba(36, 35, 31, 0.13);
+  --gc-shadow: 0 24px 60px rgba(35, 29, 22, 0.14);
+}
+
+body {
+  background: var(--gc-paper);
+  color: var(--gc-ink);
+}
+
+h1,
+h2,
+h3,
+.sqs-block-heading h1,
+.sqs-block-heading h2,
+.sqs-block-heading h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0;
+}
+
+h1 {
+  line-height: 0.95;
+}
+
+p {
+  color: var(--gc-muted);
+}
+
+a {
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.sqs-button-element--primary,
+.sqs-button-element--secondary,
+.sqs-block-button-element,
+button {
+  border-radius: 0 !important;
+  background: var(--gc-olive) !important;
+  border: 1px solid var(--gc-olive) !important;
+  color: #fff !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+.sqs-button-element--primary:hover,
+.sqs-button-element--secondary:hover,
+.sqs-block-button-element:hover,
+button:hover {
+  background: var(--gc-clay) !important;
+  border-color: var(--gc-clay) !important;
+  transform: translateY(-1px);
+}
+
+/* Optional utility classes to add in Squarespace section/block settings */
+
+.gc-section-cream {
+  background: var(--gc-cream);
+}
+
+.gc-section-dark {
+  background: var(--gc-olive);
+  color: #fff;
+}
+
+.gc-section-dark p,
+.gc-section-dark .gc-muted {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.gc-eyebrow {
+  margin: 0 0 14px;
+  color: var(--gc-clay);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.gc-muted {
+  color: var(--gc-muted);
+}
+
+.gc-brand-line {
+  margin: 20px 0;
+  color: var(--gc-clay);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.gc-card {
+  background: var(--gc-cream);
+  box-shadow: 0 16px 40px rgba(32, 28, 22, 0.1);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.gc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--gc-shadow);
+}
+
+.gc-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 22px 0;
+}
+
+.gc-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  background: #eadbc9;
+  color: var(--gc-olive);
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.gc-service-list {
+  background: var(--gc-cream);
+  padding: clamp(24px, 4vw, 38px);
+  box-shadow: 0 16px 40px rgba(32, 28, 22, 0.1);
+}
+
+.gc-service-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--gc-line);
+}
+
+.gc-service-row:first-child {
+  padding-top: 0;
+}
+
+.gc-service-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.gc-service-row strong {
+  color: var(--gc-ink);
+}
+
+.gc-service-row p {
+  margin: 8px 0 0;
+}
+
+.gc-price {
+  color: var(--gc-clay);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.gc-hours-list {
+  display: grid;
+  gap: 12px;
+}
+
+.gc-hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--gc-line);
+}
+
+.gc-hours-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.gc-social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.gc-social-link {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 20px;
+  border: 1px solid var(--gc-line);
+  background: var(--gc-paper);
+  font-weight: 800;
+}
+
+.gc-social-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(165, 103, 82, 0.45);
+  background: #fff;
+}
+
+.gc-social-link span {
+  color: var(--gc-clay);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.gc-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.gc-portfolio-grid img {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  box-shadow: var(--gc-shadow);
+}
+
+.gc-feature-credit {
+  margin-top: 22px;
+  background: var(--gc-cream);
+  padding: clamp(24px, 4vw, 36px);
+  box-shadow: 0 16px 40px rgba(32, 28, 22, 0.1);
+}
+
+@media (max-width: 800px) {
+  .gc-service-row,
+  .gc-social-grid,
+  .gc-portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gc-price {
+    white-space: normal;
+  }
+
+  .gc-portfolio-grid img {
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+}

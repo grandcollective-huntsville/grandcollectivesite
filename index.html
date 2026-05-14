@@ -1,0 +1,1145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grand Collective | Luxury Hair Studio</title>
+    <meta
+      name="description"
+      content="Grand Collective is a luxury hair studio in Huntsville, Alabama offering personalized cuts, color, styling, treatments, and extensions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f7f2ea;
+        --cream: #fffaf2;
+        --ink: #24231f;
+        --olive: #303822;
+        --sage: #687452;
+        --clay: #a56752;
+        --rose: #c7a7a1;
+        --sand: #e7d8c4;
+        --muted: #6f6a62;
+        --line: rgba(36, 35, 31, 0.12);
+        --shadow: 0 24px 60px rgba(35, 29, 22, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .shell {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: rgba(247, 242, 234, 0.93);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(16px);
+      }
+
+      .header-inner {
+        min-height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        line-height: 1;
+        min-width: max-content;
+      }
+
+      .brand-primary {
+        display: block;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+        font-weight: 700;
+        letter-spacing: 0.24em;
+      }
+
+      .brand-secondary {
+        display: block;
+        margin-top: 6px;
+        color: var(--sage);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.36em;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(16px, 2vw, 34px);
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .nav a {
+        transition: color 180ms ease;
+      }
+
+      .nav a:hover {
+        color: var(--clay);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 24px;
+        border: 1px solid transparent;
+        background: var(--olive);
+        color: #fff;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        background: var(--clay);
+      }
+
+      .button.secondary {
+        background: transparent;
+        border-color: rgba(255, 255, 255, 0.55);
+      }
+
+      .button.secondary:hover {
+        background: #fff;
+        border-color: #fff;
+        color: var(--ink);
+      }
+
+      .hero {
+        min-height: min(760px, calc(100vh - 18px));
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: #20251c;
+      }
+
+      .hero img {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 58%;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(20, 24, 16, 0.92), rgba(31, 38, 25, 0.62) 48%, rgba(31, 38, 25, 0.12)),
+          linear-gradient(0deg, rgba(36, 35, 31, 0.28), transparent 38%);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        padding: 90px 0 118px;
+        color: #fff;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: var(--sand);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      .quote {
+        font-family: "Playfair Display", Georgia, serif;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        max-width: 780px;
+        margin: 0 0 28px;
+        font-size: clamp(4rem, 11vw, 7.8rem);
+        line-height: 0.9;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(2.5rem, 6vw, 4.6rem);
+        line-height: 1;
+      }
+
+      h3 {
+        margin: 0;
+        font-size: clamp(1.65rem, 3vw, 2.45rem);
+        line-height: 1.05;
+      }
+
+      .hero p:not(.eyebrow) {
+        max-width: 560px;
+        margin: 0 0 38px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: clamp(1.05rem, 2vw, 1.32rem);
+      }
+
+      .feature-band {
+        background: var(--cream);
+        border-block: 1px solid var(--line);
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 28px;
+        padding: 30px 0;
+      }
+
+      .feature {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 14px;
+      }
+
+      .spark {
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--sage);
+        border-radius: 50%;
+        color: var(--clay);
+        font-size: 1.15rem;
+      }
+
+      .feature h3 {
+        margin: 0 0 6px;
+        font-family: Inter, system-ui, sans-serif;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .feature p,
+      .muted {
+        color: var(--muted);
+      }
+
+      .feature p {
+        margin: 0;
+        font-size: 0.92rem;
+      }
+
+      section {
+        scroll-margin-top: 90px;
+      }
+
+      .section {
+        padding: clamp(74px, 10vw, 120px) 0;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(42px, 7vw, 80px);
+        align-items: center;
+      }
+
+      .portrait-image {
+        height: min(580px, 74vw);
+        object-fit: cover;
+        box-shadow: var(--shadow);
+      }
+
+      .copy p {
+        margin: 26px 0 34px;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .brand-line {
+        margin: 0 0 22px;
+        color: var(--clay);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        line-height: 1.7;
+        text-transform: uppercase;
+      }
+
+      .dark {
+        background: var(--olive);
+        color: #fff;
+      }
+
+      .dark .muted {
+        color: rgba(255, 255, 255, 0.74);
+      }
+
+      .section-heading {
+        max-width: 840px;
+        margin: 0 auto 48px;
+        text-align: center;
+      }
+
+      .section-heading .eyebrow {
+        color: var(--clay);
+      }
+
+      .dark .section-heading .eyebrow,
+      .dark .eyebrow {
+        color: var(--sand);
+      }
+
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .stylist-card {
+        background: var(--cream);
+        color: var(--ink);
+        box-shadow: 0 16px 40px rgba(32, 28, 22, 0.1);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .stylist-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+
+      .stylist-card p {
+        color: var(--muted);
+      }
+
+      .team {
+        background: #f1e8dd;
+      }
+
+      .team .section-heading {
+        max-width: 760px;
+      }
+
+      .stylist-card {
+        overflow: hidden;
+      }
+
+      .stylist-card img {
+        height: 360px;
+        object-fit: cover;
+      }
+
+      .stylist-body {
+        padding: 30px;
+      }
+
+      .stylist-title {
+        margin: 0 0 10px;
+        color: var(--sage);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 24px 0;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        padding: 0 12px;
+        background: #eadbc9;
+        color: var(--olive);
+        border-radius: 999px;
+        font-size: 0.86rem;
+        font-weight: 700;
+      }
+
+      .gallery-heading {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.74fr);
+        gap: 36px;
+        align-items: end;
+        margin-bottom: 40px;
+      }
+
+      .gallery-heading p:last-child {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .gallery img {
+        height: min(470px, 62vw);
+        object-fit: cover;
+        object-position: center;
+        box-shadow: var(--shadow);
+      }
+
+      .gallery img:first-child {
+        object-position: center 62%;
+      }
+
+      .testimonial {
+        background: #eadbc9;
+        border-block: 1px solid rgba(165, 103, 82, 0.22);
+      }
+
+      .quote-wrap {
+        max-width: 920px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .quote {
+        margin: 0 0 24px;
+        font-size: clamp(2rem, 4.6vw, 3.9rem);
+        font-style: italic;
+        line-height: 1.16;
+      }
+
+      .quote-name {
+        margin: 0;
+        color: var(--sage);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .connect {
+        background: var(--cream);
+      }
+
+      .connect-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.62fr);
+        gap: clamp(34px, 6vw, 70px);
+        align-items: center;
+      }
+
+      .social-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+        gap: 14px;
+      }
+
+      .social-link {
+        min-height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 18px 20px;
+        border: 1px solid var(--line);
+        background: var(--paper);
+        font-weight: 800;
+        min-width: 0;
+        transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      }
+
+      .social-link:hover {
+        transform: translateY(-2px);
+        border-color: rgba(165, 103, 82, 0.45);
+        background: #fff;
+      }
+
+      .social-link span {
+        color: var(--clay);
+        font-size: 0.76rem;
+        letter-spacing: 0.12em;
+        overflow-wrap: anywhere;
+        text-align: right;
+        text-transform: uppercase;
+      }
+
+      .contact-card {
+        background: var(--cream);
+        color: var(--ink);
+        padding: clamp(28px, 5vw, 48px);
+        box-shadow: var(--shadow);
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 15px;
+        margin: 28px 0 34px;
+        color: var(--muted);
+      }
+
+      .contact-list p {
+        margin: 0;
+      }
+
+      .inquiry {
+        background: var(--paper);
+      }
+
+      .inquiry-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 0.46fr) minmax(0, 0.74fr);
+        gap: clamp(34px, 6vw, 70px);
+        align-items: start;
+      }
+
+      .inquiry-form {
+        display: grid;
+        gap: 18px;
+        background: var(--cream);
+        padding: clamp(24px, 4vw, 42px);
+        box-shadow: var(--shadow);
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .field {
+        display: grid;
+        gap: 7px;
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      .field label,
+      .fieldset-label {
+        color: var(--ink);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .field input,
+      .field select,
+      .field textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--ink);
+        font: inherit;
+        min-height: 48px;
+        padding: 12px 14px;
+      }
+
+      .field textarea {
+        min-height: 132px;
+        resize: vertical;
+      }
+
+      .check-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 14px;
+      }
+
+      .check-grid label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .form-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .site-footer {
+        padding: 34px 0;
+        background: var(--paper);
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 900px) {
+        .header-inner {
+          flex-wrap: wrap;
+          padding: 16px 0;
+        }
+
+        .nav {
+          order: 3;
+          width: 100%;
+          justify-content: flex-start;
+          overflow-x: auto;
+          padding-bottom: 2px;
+        }
+
+        .hero {
+          min-height: 720px;
+        }
+
+        .features,
+        .card-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .split,
+        .gallery-heading,
+        .connect-inner,
+        .inquiry-wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .shell {
+          width: min(100% - 28px, 1180px);
+        }
+
+        .site-header .button {
+          min-height: 42px;
+          padding: 0 14px;
+          font-size: 0.68rem;
+          letter-spacing: 0.12em;
+        }
+
+        .nav {
+          gap: 18px;
+          font-size: 0.84rem;
+        }
+
+        .hero {
+          min-height: 660px;
+        }
+
+        .hero-content {
+          padding: 66px 0 92px;
+        }
+
+        .features,
+        .card-grid,
+        .gallery,
+        .form-grid,
+        .check-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .social-link {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+          min-height: 72px;
+        }
+
+        .social-link span {
+          text-align: left;
+        }
+
+        .feature {
+          grid-template-columns: 40px 1fr;
+        }
+
+        .spark {
+          width: 40px;
+          height: 40px;
+        }
+
+        .portrait-image,
+        .gallery img,
+        .stylist-card img {
+          height: auto;
+          aspect-ratio: 4 / 5;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#home" aria-label="Grand Collective home">
+          <span class="brand-primary">GRAND</span>
+          <span class="brand-secondary">COLLECTIVE</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#team">Team</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#inquiry">Inquiry</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="button" href="https://www.glossgenius.com" target="_blank" rel="noopener noreferrer">Book Now</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <img
+          src="assets/salon-lounge.jpeg"
+          alt="Grand Collective salon lounge with cream sofa, green accents, plants, and artwork"
+        />
+        <div class="shell hero-content">
+          <p class="eyebrow">More than a salon</p>
+          <h1>Elevated Hair. Inspired by You.</h1>
+          <p>Luxury hair care in a relaxing, modern space designed with you in mind.</p>
+          <a class="button secondary" href="https://www.glossgenius.com" target="_blank" rel="noopener noreferrer">
+            Book Your Appointment
+          </a>
+        </div>
+      </section>
+
+      <section class="feature-band" aria-label="Salon highlights">
+        <div class="shell features">
+          <article class="feature">
+            <span class="spark" aria-hidden="true">✦</span>
+            <div>
+              <h3>Clean Beauty</h3>
+              <p>Thoughtfully curated products for healthy hair.</p>
+            </div>
+          </article>
+          <article class="feature">
+            <span class="spark" aria-hidden="true">✦</span>
+            <div>
+              <h3>Relaxing Space</h3>
+              <p>Designed to help you unwind and recharge.</p>
+            </div>
+          </article>
+          <article class="feature">
+            <span class="spark" aria-hidden="true">✦</span>
+            <div>
+              <h3>Expert Stylists</h3>
+              <p>Experienced professionals who truly listen.</p>
+            </div>
+          </article>
+          <article class="feature">
+            <span class="spark" aria-hidden="true">✦</span>
+            <div>
+              <h3>Personalized Care</h3>
+              <p>Custom looks tailored to you and your lifestyle.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="shell split">
+          <img
+            class="portrait-image"
+            src="assets/salon-styling-station.jpeg"
+            alt="Grand Collective styling station with green salon chair, arched mirror, and product shelves"
+          />
+          <div class="copy">
+            <p class="eyebrow">About Us</p>
+            <h2>A Salon Experience That Feels Like Home</h2>
+            <p>
+              At Grand Collective, beautiful hair starts with how you feel. Our goal is to create a welcoming,
+              elevated experience where you can relax, feel confident, and leave feeling like your best self.
+            </p>
+            <div class="brand-line">
+              Grounded in craft · Refined in technique · Artistry without compromise · Noteworthy standard · Defined by discipline
+            </div>
+            <a class="button" href="#team">Meet the Team</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section team" id="team">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">Meet the Collective</p>
+            <h2>Choose Your Stylist</h2>
+            <p class="muted">
+              Get to know each stylist, explore their specialties, and open their profile for services, pricing,
+              portfolio work, and social links.
+            </p>
+          </div>
+
+          <div class="card-grid">
+            <article class="stylist-card">
+              <img
+                src="https://scontent-atl3-3.xx.fbcdn.net/v/t51.82787-15/645828600_18410996041132107_3146058509000540786_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=li1byOD70IgQ7kNvwHXrajr&_nc_oc=AdpPL_FQhlfdvkfmpKuUC0N3AaipbnE9xG3eQyv5bgI722FaXKbrHOtxYbBy1-VGNukWis0WMuGWxEHHqZU8U7DI&_nc_zt=23&_nc_ht=scontent-atl3-3.xx&_nc_gid=JzuvWcwWNHqsFKh1lFBW8g&_nc_ss=7b2a8&oh=00_Af6SgL-Ng6SJJpRJ5q_Zm3h-JYjQXnUCcD03-8H7LQjuSw&oe=69FB43D0"
+                alt="Abbie Brown, founder and stylist at Grand Collective"
+              />
+              <div class="stylist-body">
+                <p class="stylist-title">Founder & Stylist</p>
+                <h3>Abbie Brown</h3>
+                <p>Color, cuts, and extensions with a warm, empowering guest experience.</p>
+                <div class="chips" aria-label="Services offered">
+                  <span class="chip">Color</span>
+                  <span class="chip">Cuts</span>
+                  <span class="chip">Extensions</span>
+                </div>
+                <a class="button" href="abbie-brown.html">View Profile</a>
+              </div>
+            </article>
+
+            <article class="stylist-card">
+              <img
+                src="https://static.glossgenius.com/public/salon/a362d06cf3b8d1f4d2407f209b856b22dd4c6604/website_cover_image/cc48721b453669efaa2fc323469e6ce3.jpeg"
+                alt="Mariah Brasel hair work"
+              />
+              <div class="stylist-body">
+                <p class="stylist-title">Stylist</p>
+                <h3>Mariah Brasel</h3>
+                <p>Personalized hair services designed around each guest’s goals, lifestyle, and natural beauty.</p>
+                <div class="chips" aria-label="Services offered">
+                  <span class="chip">Color</span>
+                  <span class="chip">Cuts</span>
+                  <span class="chip">Styling</span>
+                </div>
+                <a class="button" href="mariah-brasel.html">View Profile</a>
+              </div>
+            </article>
+
+            <article class="stylist-card">
+              <img
+                src="assets/mary-elizabeth-brooks.png"
+                alt="Mary Elizabeth Brooks"
+              />
+              <div class="stylist-body">
+                <p class="stylist-title">Stylist</p>
+                <h3>Mary Elizabeth Brooks</h3>
+                <p>Personalized hair services in a relaxed, thoughtful salon experience.</p>
+                <div class="chips" aria-label="Services offered">
+                  <span class="chip">Color</span>
+                  <span class="chip">Cuts</span>
+                  <span class="chip">Styling</span>
+                </div>
+                <a class="button" href="mary-elizabeth-brooks.html">View Profile</a>
+              </div>
+            </article>
+
+            <article class="stylist-card">
+              <img
+                src="https://static.glossgenius.com/public/user/c93a3cfb42917dda00676655c4abd8143cd4c05f/avatar/fdd5fae44b6afadf46281461badc372c.jpeg"
+                alt="Reshae Simmons"
+              />
+              <div class="stylist-body">
+                <p class="stylist-title">Stylist</p>
+                <h3>Reshae Simmons</h3>
+                <p>Personalized hair services with a client-first approach and refined finish.</p>
+                <div class="chips" aria-label="Services offered">
+                  <span class="chip">Color</span>
+                  <span class="chip">Cuts</span>
+                  <span class="chip">Styling</span>
+                </div>
+                <a class="button" href="reshae-simmons.html">View Profile</a>
+              </div>
+            </article>
+
+            <article class="stylist-card">
+              <img
+                src="assets/hannah-nadji.jpg"
+                alt="Hannah Nadji"
+              />
+              <div class="stylist-body">
+                <p class="stylist-title">Stylist</p>
+                <h3>Hannah Nadji</h3>
+                <p>Personalized beauty services with thoughtful care and a polished finish.</p>
+                <div class="chips" aria-label="Services offered">
+                  <span class="chip">Hair</span>
+                  <span class="chip">Makeup</span>
+                  <span class="chip">Styling</span>
+                </div>
+                <a class="button" href="hannah-nadji.html">View Profile</a>
+              </div>
+            </article>
+
+            <article class="stylist-card">
+              <img
+                src="assets/salon-lounge.jpeg"
+                alt="Grand Collective salon lounge for Madison Richardson profile"
+              />
+              <div class="stylist-body">
+                <p class="stylist-title">Stylist</p>
+                <h3>Madison Richardson</h3>
+                <p>Personalized hair services in a calm, elevated salon experience.</p>
+                <div class="chips" aria-label="Services offered">
+                  <span class="chip">Color</span>
+                  <span class="chip">Cuts</span>
+                  <span class="chip">Styling</span>
+                </div>
+                <a class="button" href="madison.html">View Profile</a>
+              </div>
+            </article>
+
+            <article class="stylist-card">
+              <img
+                src="assets/salon-styling-station.jpeg"
+                alt="Grand Collective styling station for Emilee Anderson profile"
+              />
+              <div class="stylist-body">
+                <p class="stylist-title">Stylist</p>
+                <h3>Emilee Anderson</h3>
+                <p>Personalized hair services with a polished, guest-centered experience.</p>
+                <div class="chips" aria-label="Services offered">
+                  <span class="chip">Color</span>
+                  <span class="chip">Cuts</span>
+                  <span class="chip">Styling</span>
+                </div>
+                <a class="button" href="emilee.html">View Profile</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="shell">
+          <div class="gallery-heading">
+            <div>
+              <p class="eyebrow">The Salon</p>
+              <h2>A Space Designed for You</h2>
+            </div>
+            <p>
+              Warm wood shelves, soft textures, earthy greens, and refined accents create a salon environment that feels
+              calm, modern, and inviting.
+            </p>
+          </div>
+
+          <div class="gallery">
+            <img
+              src="assets/salon-styling-station.jpeg"
+              alt="Grand Collective styling station and retail shelves"
+            />
+            <img
+              src="assets/salon-lounge.jpeg"
+              alt="Grand Collective lounge seating with patterned rug, plants, and wall art"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonial">
+        <div class="shell quote-wrap">
+          <p class="quote">
+            “The best salon experience I’ve ever had. The space is gorgeous, the team is so kind, and my hair has never
+            looked better.”
+          </p>
+          <p class="quote-name">Jessica M.</p>
+        </div>
+      </section>
+
+      <section class="section connect">
+        <div class="shell connect-inner">
+          <div>
+            <p class="eyebrow">Connect With Us</p>
+            <h2>Follow the Collective</h2>
+            <p class="muted">
+              Keep up with salon updates, stylist work, fresh transformations, and behind-the-scenes moments from Grand
+              Collective.
+            </p>
+          </div>
+
+          <div class="social-grid" aria-label="Grand Collective social media links">
+            <a
+              class="social-link"
+              href="https://www.instagram.com/grand.collective.hsv?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram <span>@grand.collective.hsv</span>
+            </a>
+            <a class="social-link" href="https://www.tiktok.com/@grandcollective" target="_blank" rel="noopener noreferrer">
+              TikTok <span>@grandcollective</span>
+            </a>
+            <a class="social-link" href="https://www.facebook.com/GrandCollective" target="_blank" rel="noopener noreferrer">
+              Facebook <span>Grand Collective</span>
+            </a>
+            <a class="social-link" href="mailto:hello@grandcollectivesalon.com">
+              Email <span>Say Hello</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section inquiry" id="inquiry">
+        <div class="shell inquiry-wrap">
+          <div>
+            <p class="eyebrow">New Clients</p>
+            <h2>Inquiry Form</h2>
+            <p class="muted">
+              Tell us a little about your hair goals and we’ll help route your inquiry to the stylist who best fits your
+              service, schedule, and maintenance needs.
+            </p>
+            <p class="form-note">
+              After publishing on Netlify, enable form notifications and add each stylist’s email so every submission is
+              sent to the full team.
+            </p>
+          </div>
+
+          <form
+            class="inquiry-form"
+            name="new-client-inquiry"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            enctype="multipart/form-data"
+          >
+            <input type="hidden" name="form-name" value="new-client-inquiry" />
+            <p class="field" hidden>
+              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="client-name">Name</label>
+                <input id="client-name" name="name" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="client-phone">Phone</label>
+                <input id="client-phone" name="phone" autocomplete="tel" required />
+              </div>
+              <div class="field">
+                <label for="client-email">Email</label>
+                <input id="client-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="preferred-stylist">Preferred Stylist</label>
+                <select id="preferred-stylist" name="preferred-stylist">
+                  <option>Any stylist</option>
+                  <option>Abbie Brown</option>
+                  <option>Mariah Brasel</option>
+                  <option>Mary Elizabeth Brooks</option>
+                  <option>Reshae Simmons</option>
+                  <option>Hannah Nadji</option>
+                  <option>Madison Richardson</option>
+                  <option>Emilee Anderson</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <div class="fieldset-label">Services Interested In</div>
+                <div class="check-grid">
+                  <label><input type="checkbox" name="services" value="haircut" /> Haircut</label>
+                  <label><input type="checkbox" name="services" value="color" /> Color</label>
+                  <label><input type="checkbox" name="services" value="extensions" /> Extensions</label>
+                  <label><input type="checkbox" name="services" value="bridal" /> Bridal/Event</label>
+                  <label><input type="checkbox" name="services" value="makeup" /> Makeup</label>
+                  <label><input type="checkbox" name="services" value="consultation" /> Consultation</label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="timeline">Ideal Timing</label>
+                <input id="timeline" name="timeline" placeholder="Example: next 2 weeks" />
+              </div>
+              <div class="field">
+                <label for="photos">Inspiration Photos</label>
+                <input id="photos" name="photos" type="file" accept="image/*" multiple />
+              </div>
+              <div class="field full">
+                <label for="hair-history">Hair History + Goals</label>
+                <textarea
+                  id="hair-history"
+                  name="hair-history"
+                  placeholder="Current hair, previous color/services, inspiration, maintenance preferences, and anything else we should know."
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <button class="button" type="submit">Send Inquiry</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section dark" id="book">
+        <div class="shell split">
+          <div>
+            <p class="eyebrow">Ready for your best hair yet?</p>
+            <h2>Book your Grand Collective appointment.</h2>
+            <p class="muted">
+              Book your appointment through GlossGenius or visit us at 3800 Governors Drive, Suite 109, Huntsville, AL
+              35805.
+            </p>
+          </div>
+
+          <div class="contact-card" id="contact">
+            <h3>Visit Us</h3>
+            <div class="contact-list">
+              <p><strong>Address:</strong> 3800 Governors Drive, Suite 109, Huntsville, AL 35805</p>
+              <p><strong>Phone:</strong> (555) 123-4567</p>
+              <p><strong>Email:</strong> hello@grandcollectivesalon.com</p>
+              <p><strong>Instagram:</strong> @grandcollective</p>
+            </div>
+            <a class="button" href="https://www.glossgenius.com" target="_blank" rel="noopener noreferrer">Book Now</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <span>© 2026 Grand Collective. All rights reserved.</span>
+        <span>Luxury Hair Studio · Clean Beauty · Personalized Care</span>
+      </div>
+    </footer>
+  </body>
+</html>
