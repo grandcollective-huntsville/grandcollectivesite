@@ -1043,9 +1043,7 @@
             enctype="multipart/form-data"
           >
             <input type="hidden" name="form-name" value="new-client-inquiry" />
-            <p class="field" hidden>
-              <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-            </p>
+            <input type="text" name="bot-field" tabindex="-1" autocomplete="off" hidden />
 
             <div class="form-grid">
               <div class="field">
