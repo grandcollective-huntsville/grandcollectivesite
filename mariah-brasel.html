@@ -252,6 +252,9 @@
         }
       }
     </style>
+    <style>
+      .portfolio-section{padding-bottom:0}.portfolio-editorial{display:grid;grid-template-columns:170px minmax(0,1fr);gap:clamp(28px,5vw,58px)}.portfolio-nav{display:flex;flex-direction:column;gap:13px;padding-top:10px;color:#6f6a62;font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.portfolio-nav button{width:fit-content;padding:0;border:0;background:transparent;color:inherit;font:inherit;letter-spacing:inherit;text-align:left;text-transform:inherit;cursor:pointer}.portfolio-nav button.is-active{color:#24231f;text-decoration:underline;text-underline-offset:5px}.portfolio-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,.46fr);gap:clamp(28px,5vw,66px);align-items:end;margin-bottom:32px}.portfolio-intro h2{max-width:620px;margin-bottom:0;font-size:clamp(3.4rem,7vw,6.7rem);line-height:.9}.portfolio-note{max-width:240px;margin:0 0 12px;color:#303822}.portfolio-signature{margin:26px 0 0;color:#24231f;font-size:.73rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase}.portfolio-masonry{column-count:2;column-gap:24px}.portfolio-piece{break-inside:avoid;margin:0 0 24px}.portfolio-piece.is-hidden{display:none}.portfolio-piece img{height:auto;object-fit:contain;box-shadow:0 24px 60px rgba(35,29,22,.14)}.portfolio-caption{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(18px,5vw,72px);align-items:center;padding:24px 0 0;color:#303822;font-size:.73rem;letter-spacing:.22em;text-align:center;text-transform:uppercase}.portfolio-caption::before,.portfolio-caption::after{content:"";height:1px;background:rgba(36,35,31,.22)}@media(max-width:900px){.portfolio-editorial,.portfolio-intro{grid-template-columns:1fr}.portfolio-nav{flex-direction:row;flex-wrap:wrap}.portfolio-masonry{column-count:1}}@media(max-width:620px){.portfolio-caption{display:block;line-height:1.8}}
+    </style>
   </head>
   <body>
     <header class="topbar">
@@ -537,23 +540,47 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="shell">
-          <p class="eyebrow">Portfolio</p>
-          <h2>Mariah’s Work</h2>
-          <div class="portfolio">
-            <img
-              src="https://static.glossgenius.com/public/portfolioimage/21bd41799e53db3c8dc91d9ecd36a8bee594989e/image/medium-06529530df97211ab0835ce8db86fe33.jpeg"
-              alt="Hair by Mariah Brasel in Huntsville, AL"
-            />
-            <img
-              src="https://static.glossgenius.com/public/portfolioimage/04c5f156e5b952afe01df198da16b0224d9a7205/image/medium-8fd4d2028b8d2ee472edebd73354b1ce.jpeg"
-              alt="Hair by Mariah Brasel in Huntsville, AL"
-            />
-            <img
-              src="https://static.glossgenius.com/public/portfolioimage/8ce8f6565a3b106f69341359349169f984e360fa/image/medium-00bf606ba8c996ef658dcc3fbd1c6bfd.jpeg"
-              alt="Custom color with full foil highs and lows at Hair by Mariah Brasel in Huntsville, AL"
-            />
+      <section class="section portfolio-section">
+        <div class="shell portfolio-editorial">
+          <aside class="portfolio-nav" aria-label="Portfolio categories">
+            <button class="is-active" type="button" data-filter="all" aria-pressed="true">All Work</button>
+            <button type="button" data-filter="blondes" aria-pressed="false">Blondes</button>
+            <button type="button" data-filter="extensions" aria-pressed="false">Extensions</button>
+            <button type="button" data-filter="lived-in-color" aria-pressed="false">Lived-In Color</button>
+            <button type="button" data-filter="styling" aria-pressed="false">Styling</button>
+          </aside>
+          <div>
+            <div class="portfolio-intro">
+              <div>
+                <p class="eyebrow">Portfolio</p>
+                <h2>Blended. Lived-In. Confident.</h2>
+              </div>
+              <div>
+                <p class="portfolio-note">Soft color, lived-in dimension, and extension transformations with an easy finish.</p>
+                <p class="portfolio-signature">- Mariah Brasel</p>
+              </div>
+            </div>
+            <div class="portfolio-masonry">
+              <figure class="portfolio-piece" data-categories="extensions styling">
+                <img
+                  src="https://static.glossgenius.com/public/portfolioimage/21bd41799e53db3c8dc91d9ecd36a8bee594989e/image/medium-06529530df97211ab0835ce8db86fe33.jpeg"
+                  alt="Hair by Mariah Brasel in Huntsville, AL"
+                />
+              </figure>
+              <figure class="portfolio-piece" data-categories="blondes lived-in-color styling">
+                <img
+                  src="https://static.glossgenius.com/public/portfolioimage/04c5f156e5b952afe01df198da16b0224d9a7205/image/medium-8fd4d2028b8d2ee472edebd73354b1ce.jpeg"
+                  alt="Hair by Mariah Brasel in Huntsville, AL"
+                />
+              </figure>
+              <figure class="portfolio-piece" data-categories="blondes lived-in-color">
+                <img
+                  src="https://static.glossgenius.com/public/portfolioimage/8ce8f6565a3b106f69341359349169f984e360fa/image/medium-00bf606ba8c996ef658dcc3fbd1c6bfd.jpeg"
+                  alt="Custom color with full foil highs and lows at Hair by Mariah Brasel in Huntsville, AL"
+                />
+              </figure>
+            </div>
+            <div class="portfolio-caption"><span>Blended color. Seamless extensions. Everyday confidence.</span></div>
           </div>
         </div>
       </section>
@@ -562,5 +589,23 @@
     <footer>
       <div class="shell">© 2026 Grand Collective. All rights reserved.</div>
     </footer>
+    <script>
+      const filterButtons = document.querySelectorAll(".portfolio-nav button");
+      const portfolioPieces = document.querySelectorAll(".portfolio-piece");
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const filter = button.dataset.filter;
+          filterButtons.forEach((item) => {
+            const isActive = item === button;
+            item.classList.toggle("is-active", isActive);
+            item.setAttribute("aria-pressed", String(isActive));
+          });
+          portfolioPieces.forEach((piece) => {
+            const categories = piece.dataset.categories.split(" ");
+            piece.classList.toggle("is-hidden", filter !== "all" && !categories.includes(filter));
+          });
+        });
+      });
+    </script>
   </body>
 </html>

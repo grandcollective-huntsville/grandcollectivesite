@@ -360,6 +360,195 @@
         }
       }
     </style>
+    <style>
+      .portfolio-section {
+        padding-bottom: 0;
+      }
+
+      .portfolio-editorial {
+        display: grid;
+        grid-template-columns: 170px minmax(0, 1fr);
+        gap: clamp(28px, 5vw, 58px);
+      }
+
+      .portfolio-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        padding-top: 10px;
+        color: #6f6a62;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .portfolio-nav button {
+        width: fit-content;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        letter-spacing: inherit;
+        text-align: left;
+        text-transform: inherit;
+        cursor: pointer;
+      }
+
+      .portfolio-nav button.is-active {
+        color: #24231f;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+
+      .portfolio-intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(190px, 0.46fr);
+        gap: clamp(28px, 5vw, 66px);
+        align-items: end;
+        margin-bottom: 32px;
+      }
+
+      .portfolio-intro h2 {
+        max-width: 620px;
+        margin-bottom: 0;
+        font-size: clamp(3.4rem, 7vw, 6.7rem);
+        line-height: 0.9;
+      }
+
+      .portfolio-note {
+        max-width: 240px;
+        margin: 0 0 12px;
+        color: #303822;
+      }
+
+      .portfolio-signature {
+        margin: 26px 0 0;
+        color: #24231f;
+        font-size: 0.73rem;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .portfolio-masonry {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .portfolio-piece {
+        min-height: 0;
+        margin: 0;
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
+        background: #ebe5dc;
+      }
+
+      .portfolio-piece:nth-child(6n + 1),
+      .portfolio-piece:nth-child(6n + 4) {
+        aspect-ratio: 1 / 1;
+      }
+
+      .portfolio-piece.is-hidden,
+      .portfolio-piece.is-page-hidden {
+        display: none;
+      }
+
+      .portfolio-piece img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        box-shadow: none;
+      }
+
+      .portfolio-pagination {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .portfolio-arrow {
+        display: inline-grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border: 1px solid rgba(36, 35, 31, 0.28);
+        border-radius: 999px;
+        background: transparent;
+        color: #24231f;
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+
+      .portfolio-arrow:disabled {
+        cursor: not-allowed;
+        opacity: 0.35;
+      }
+
+      .portfolio-page-count {
+        min-width: 92px;
+        color: #6f6a62;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .portfolio-caption {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: clamp(18px, 5vw, 72px);
+        align-items: center;
+        padding: 24px 0 0;
+        color: #303822;
+        font-size: 0.73rem;
+        letter-spacing: 0.22em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .portfolio-caption::before,
+      .portfolio-caption::after {
+        content: "";
+        height: 1px;
+        background: rgba(36, 35, 31, 0.22);
+      }
+
+      @media (max-width: 900px) {
+        .portfolio-editorial,
+        .portfolio-intro {
+          grid-template-columns: 1fr;
+        }
+
+        .portfolio-nav {
+          flex-flow: row wrap;
+        }
+
+        .portfolio-masonry {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 620px) {
+        .portfolio-masonry {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .portfolio-pagination {
+          justify-content: center;
+        }
+
+        .portfolio-caption {
+          display: block;
+          line-height: 1.8;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="topbar">
@@ -596,19 +785,198 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="shell">
-          <p class="eyebrow">Portfolio</p>
-          <h2>Abbie’s Work</h2>
-          <div class="portfolio">
-            <img src="assets/abbie-portfolio-editorial-blonde.jpg" alt="Editorial blonde hair styled by Abbie Brown" />
-            <img src="assets/abbie-portfolio-split-color.jpg" alt="Split black and platinum hair color by Abbie Brown" />
-            <img src="assets/abbie-portfolio-soft-blonde-side.jpg" alt="Soft dimensional blonde color by Abbie Brown" />
-            <img src="assets/abbie-portfolio-soft-blonde-front.jpg" alt="Dimensional blonde haircut and color by Abbie Brown" />
-            <img src="assets/abbie-portfolio-long-blonde.jpg" alt="Long blonde waves and color by Abbie Brown" />
-            <img src="assets/salon-styling-station.jpeg" alt="Grand Collective styling station" />
-          </div>
-          <div class="feature-credit">
+      <section class="section portfolio-section">
+        <div class="shell portfolio-editorial">
+          <aside class="portfolio-nav" aria-label="Portfolio categories">
+            <button class="is-active" type="button" data-filter="all" aria-pressed="true">All Work</button>
+            <button type="button" data-filter="blondes" aria-pressed="false">Blondes</button>
+            <button type="button" data-filter="editorial" aria-pressed="false">Editorial</button>
+            <button type="button" data-filter="extensions" aria-pressed="false">Extensions</button>
+            <button type="button" data-filter="styling" aria-pressed="false">Styling</button>
+          </aside>
+          <div>
+            <div class="portfolio-intro">
+              <div>
+                <p class="eyebrow">Portfolio</p>
+                <h2>Precision. Color. Editorial Finish.</h2>
+              </div>
+              <div>
+                <p class="portfolio-note">Custom color, dimensional blondes, extension work, and fashion-forward styling.</p>
+                <p class="portfolio-signature">- Abbie Brown</p>
+              </div>
+            </div>
+            <div class="portfolio-masonry">
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8039.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8059.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-7989.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8004.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-7994.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8023.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8028.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8047.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8045.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8012.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8021.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8008.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8014.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8011.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8053.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8055.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8041.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8018.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8060.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8052.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-7995.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8007.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8016.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8061.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8064.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8063.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-7987.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8013.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8027.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8029.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8065.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8005.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8051.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8054.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8037.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8026.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-7993.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-7992.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8036.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8062.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8030.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8043.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8017.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8019.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8056.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8020.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8015.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-7990.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-7999.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8006.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-7988.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8042.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+              <figure class="portfolio-piece" data-categories="editorial styling">
+                <img src="assets/abbie-portfolio-8046.jpeg" alt="Abbie Brown portfolio work" />
+              </figure>
+            </div>
+            <div class="portfolio-pagination" aria-label="Portfolio pages">
+              <button class="portfolio-arrow" type="button" data-page-action="prev" aria-label="Previous portfolio page">
+                &larr;
+              </button>
+              <span class="portfolio-page-count" aria-live="polite">Page 1 / 1</span>
+              <button class="portfolio-arrow" type="button" data-page-action="next" aria-label="Next portfolio page">
+                &rarr;
+              </button>
+            </div>
+            <div class="portfolio-caption"><span>Artistry you can see. Confidence you can feel.</span></div>
+            <div class="feature-credit">
             <p class="eyebrow">Featured In</p>
             <h3>DSCENE Style Stories: Lacquer</h3>
             <p>
@@ -623,6 +991,7 @@
             >
               View Feature
             </a>
+            </div>
           </div>
         </div>
       </section>
@@ -631,5 +1000,70 @@
     <footer>
       <div class="shell">© 2026 Grand Collective. All rights reserved.</div>
     </footer>
+    <script>
+      const filterButtons = document.querySelectorAll(".portfolio-nav button");
+      const portfolioPieces = document.querySelectorAll(".portfolio-piece");
+      const pageButtons = document.querySelectorAll("[data-page-action]");
+      const pageCount = document.querySelector(".portfolio-page-count");
+      const pageSize = 12;
+      let activeFilter = "all";
+      let activePage = 0;
+
+      function visiblePieces() {
+        return Array.from(portfolioPieces).filter((piece) => {
+          const categories = piece.dataset.categories.split(" ");
+          return activeFilter === "all" || categories.includes(activeFilter);
+        });
+      }
+
+      function updatePortfolio() {
+        const pieces = visiblePieces();
+        const totalPages = Math.max(1, Math.ceil(pieces.length / pageSize));
+        activePage = Math.min(activePage, totalPages - 1);
+
+        portfolioPieces.forEach((piece) => {
+          piece.classList.add("is-hidden");
+          piece.classList.add("is-page-hidden");
+        });
+
+        pieces.forEach((piece, index) => {
+          const isOnPage = Math.floor(index / pageSize) === activePage;
+          piece.classList.remove("is-hidden");
+          piece.classList.toggle("is-page-hidden", !isOnPage);
+        });
+
+        pageButtons.forEach((button) => {
+          const action = button.dataset.pageAction;
+          button.disabled = action === "prev" ? activePage === 0 : activePage >= totalPages - 1;
+        });
+
+        if (pageCount) {
+          pageCount.textContent = pieces.length ? `Page ${activePage + 1} / ${totalPages}` : "No Work";
+        }
+      }
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          activeFilter = button.dataset.filter;
+          activePage = 0;
+          filterButtons.forEach((item) => {
+            const isActive = item === button;
+            item.classList.toggle("is-active", isActive);
+            item.setAttribute("aria-pressed", String(isActive));
+          });
+          updatePortfolio();
+        });
+      });
+
+      pageButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          activePage += button.dataset.pageAction === "next" ? 1 : -1;
+          updatePortfolio();
+          document.querySelector(".portfolio-section").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+
+      updatePortfolio();
+    </script>
   </body>
 </html>
