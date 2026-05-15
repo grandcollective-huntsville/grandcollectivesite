@@ -294,10 +294,36 @@
         box-shadow: var(--shadow);
       }
 
+      .about-image {
+        height: auto;
+        object-fit: contain;
+      }
+
       .copy p {
         margin: 26px 0 34px;
         color: var(--muted);
         font-size: 1.08rem;
+      }
+
+      .about-story {
+        margin: 26px 0 34px;
+      }
+
+      .about-story p {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.72;
+      }
+
+      .about-story .about-quote {
+        margin: 28px 0;
+        padding: 24px 0 24px 26px;
+        border-left: 2px solid var(--clay);
+        color: var(--olive);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(1.45rem, 3vw, 2.1rem);
+        line-height: 1.12;
       }
 
       .brand-line {
@@ -546,23 +572,29 @@
         align-items: start;
       }
 
+      .inquiry-wrap > div:first-child {
+        max-width: 460px;
+      }
+
       .inquiry-form {
         display: grid;
-        gap: 18px;
+        gap: 24px;
         background: var(--cream);
-        padding: clamp(24px, 4vw, 42px);
+        border: 1px solid var(--line);
+        padding: clamp(24px, 4vw, 44px);
         box-shadow: var(--shadow);
       }
 
       .form-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
+        gap: 20px;
       }
 
       .field {
         display: grid;
-        gap: 7px;
+        gap: 9px;
+        min-width: 0;
       }
 
       .field.full {
@@ -575,6 +607,8 @@
         font-size: 0.78rem;
         font-weight: 800;
         letter-spacing: 0.1em;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
         text-transform: uppercase;
       }
 
@@ -588,6 +622,15 @@
         font: inherit;
         min-height: 48px;
         padding: 12px 14px;
+        transition: border-color 180ms ease, box-shadow 180ms ease;
+      }
+
+      .field input:focus,
+      .field select:focus,
+      .field textarea:focus {
+        border-color: rgba(165, 103, 82, 0.65);
+        box-shadow: 0 0 0 3px rgba(165, 103, 82, 0.12);
+        outline: none;
       }
 
       .field textarea {
@@ -598,21 +641,27 @@
       .check-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px 14px;
+        gap: 10px;
       }
 
       .check-grid label {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
+        min-height: 46px;
+        min-width: 0;
+        border: 1px solid var(--line);
+        background: #fff;
         color: var(--muted);
         font-size: 0.95rem;
+        line-height: 1.25;
+        padding: 11px 13px;
+        white-space: normal;
       }
 
-      .form-note {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.92rem;
+      .check-grid input {
+        accent-color: var(--clay);
+        flex: 0 0 auto;
       }
 
       .site-footer {
@@ -798,19 +847,56 @@
       <section class="section" id="about">
         <div class="shell split">
           <img
-            class="portrait-image"
-            src="assets/salon-styling-station.jpeg"
-            alt="Grand Collective styling station with green salon chair, arched mirror, and product shelves"
+            class="portrait-image about-image"
+            src="assets/about-salon-stations.jpeg?v=2"
+            alt="Grand Collective salon stations with green chairs, arched mirrors, and warm lighting"
           />
           <div class="copy">
             <p class="eyebrow">About Us</p>
-            <h2>A Salon Experience That Feels Like Home</h2>
-            <p>
-              At Grand Collective, beautiful hair starts with how you feel. Our goal is to create a welcoming,
-              elevated experience where you can relax, feel confident, and leave feeling like your best self.
-            </p>
-            <div class="brand-line">
-              Grounded in craft · Refined in technique · Artistry without compromise · Noteworthy standard · Defined by discipline
+            <h2>A Private Collective, Built With Intention</h2>
+            <div class="about-story">
+              <p>
+                Grand Collective was founded by master stylist and creative director Abbie Brown as an evolution of both
+                craft and environment, a refined private studio designed for modern artistry and disciplined excellence.
+              </p>
+              <p>
+                With over a decade of experience behind the chair, Abbie has built a reputation for elevated color work,
+                precision cutting, and seamless extension artistry. Mentorship and collaboration remain central to her
+                philosophy, ensuring that the Collective operates with an uncompromising standard of service.
+              </p>
+              <p>
+                Her career spans editorial projects, fashion-forward collaborations, and work with artists, performers,
+                and public figures, including opera vocalist Ariana Maloney, actor Carmen Retzer, model Cara Taylor, and
+                reality television personality Jamie Chapman. A Keune Artist and seasoned salon owner, Abbie's work has
+                been featured in multiple publications and shaped by years of mentorship, education, and hands-on artistry.
+              </p>
+              <p>
+                Beyond the spotlight, her expertise has been refined through the trust of hundreds of dedicated clients
+                from all walks of life. Those close relationships have deepened her understanding of texture, tone,
+                structure, and individual expression.
+              </p>
+              <p>
+                Grand Collective represents a new chapter, not defined by scale, but by intention. Rather than building
+                larger, the vision was to build more selectively: to create a private environment where independent artists
+                operate with autonomy, discipline, and creative freedom.
+              </p>
+              <p class="about-quote">
+                What sets us apart isn't just our process. It's the intention behind it.
+              </p>
+              <p>
+                We take time to understand, explore, and create with purpose. Grand Collective is about freedom, an
+                intentional private collective of beauty professionals committed to delivering the highest level of service,
+                expertise, and experience.
+              </p>
+              <p>
+                Grand Collective is composed of carefully selected independent artists recognized for refined techniques,
+                modern color work, and an uncompromising standard of service. The Collective operates with autonomy,
+                discipline, and deep respect for the craft, united under a shared expectation of excellence.
+              </p>
+              <p>
+                Artists at Grand Collective are not simply hired. They are curated by Abbie Brown to bring Huntsville a
+                private collaboration of skilled hair artists.
+              </p>
             </div>
             <a class="button" href="#team">Meet the Team</a>
           </div>
@@ -831,7 +917,7 @@
           <div class="card-grid">
             <article class="stylist-card">
               <img
-                src="https://scontent-atl3-3.xx.fbcdn.net/v/t51.82787-15/645828600_18410996041132107_3146058509000540786_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=13d280&_nc_ohc=li1byOD70IgQ7kNvwHXrajr&_nc_oc=AdpPL_FQhlfdvkfmpKuUC0N3AaipbnE9xG3eQyv5bgI722FaXKbrHOtxYbBy1-VGNukWis0WMuGWxEHHqZU8U7DI&_nc_zt=23&_nc_ht=scontent-atl3-3.xx&_nc_gid=JzuvWcwWNHqsFKh1lFBW8g&_nc_ss=7b2a8&oh=00_Af6SgL-Ng6SJJpRJ5q_Zm3h-JYjQXnUCcD03-8H7LQjuSw&oe=69FB43D0"
+                src="assets/abbie-profile.jpg"
                 alt="Abbie Brown, founder and stylist at Grand Collective"
               />
               <div class="stylist-body">
@@ -857,9 +943,9 @@
                 <h3>Mariah Brasel</h3>
                 <p>Personalized hair services designed around each guest’s goals, lifestyle, and natural beauty.</p>
                 <div class="chips" aria-label="Services offered">
-                  <span class="chip">Color</span>
-                  <span class="chip">Cuts</span>
-                  <span class="chip">Styling</span>
+                  <span class="chip">Lived-In Blondes</span>
+                  <span class="chip">Lived-In Brunettes</span>
+                  <span class="chip">Harper Ellis Hair Co Certified Extensions Specialist</span>
                 </div>
                 <a class="button" href="mariah-brasel.html">View Profile</a>
               </div>
@@ -875,9 +961,9 @@
                 <h3>Mary Elizabeth Brooks</h3>
                 <p>Personalized hair services in a relaxed, thoughtful salon experience.</p>
                 <div class="chips" aria-label="Services offered">
-                  <span class="chip">Color</span>
-                  <span class="chip">Cuts</span>
-                  <span class="chip">Styling</span>
+                  <span class="chip">Blonding</span>
+                  <span class="chip">Custom Colors</span>
+                  <span class="chip">Up-Dos</span>
                 </div>
                 <a class="button" href="mary-elizabeth-brooks.html">View Profile</a>
               </div>
@@ -912,9 +998,9 @@
                 <h3>Hannah Nadji</h3>
                 <p>Personalized beauty services with thoughtful care and a polished finish.</p>
                 <div class="chips" aria-label="Services offered">
-                  <span class="chip">Hair</span>
-                  <span class="chip">Makeup</span>
-                  <span class="chip">Styling</span>
+                  <span class="chip">Custom Color</span>
+                  <span class="chip">Lived-In Color</span>
+                  <span class="chip">Color Correcting</span>
                 </div>
                 <a class="button" href="hannah-nadji.html">View Profile</a>
               </div>
@@ -931,9 +1017,9 @@
                 <h3>Madison Richardson</h3>
                 <p>Personalized hair services in a calm, elevated salon experience.</p>
                 <div class="chips" aria-label="Services offered">
-                  <span class="chip">Color</span>
                   <span class="chip">Cuts</span>
-                  <span class="chip">Styling</span>
+                  <span class="chip">Colors</span>
+                  <span class="chip">Extensions</span>
                 </div>
                 <a class="button" href="madison.html">View Profile</a>
               </div>
@@ -941,8 +1027,8 @@
 
             <article class="stylist-card">
               <img
-                src="assets/salon-styling-station.jpeg"
-                alt="Grand Collective styling station for Emilee Anderson profile"
+                src="assets/emilee-anderson.jpg"
+                alt="Emilee Anderson"
               />
               <div class="stylist-body">
                 <p class="stylist-title">Stylist</p>
@@ -1038,10 +1124,6 @@
               Tell us a little about your hair goals and we’ll help route your inquiry to the stylist who best fits your
               service, schedule, and maintenance needs.
             </p>
-            <p class="form-note">
-              After publishing on Netlify, enable form notifications and add each stylist’s email so every submission is
-              sent to the full team.
-            </p>
           </div>
 
           <form
@@ -1133,7 +1215,6 @@
             <h3>Visit Us</h3>
             <div class="contact-list">
               <p><strong>Address:</strong> 3800 Governors Drive, Suite 109, Huntsville, AL 35805</p>
-              <p><strong>Phone:</strong> (555) 123-4567</p>
               <p><strong>Email:</strong> hello@grandcollectivesalon.com</p>
               <p><strong>Instagram:</strong> @grandcollective</p>
             </div>
