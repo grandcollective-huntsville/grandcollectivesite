@@ -403,7 +403,9 @@
         object-position: center top;
       }
 
-      .stylist-card img.madison-photo {
+      .stylist-card img.abbie-brown-photo,
+      .stylist-card img.madison-photo,
+      .stylist-card img.mary-brooks-photo {
         object-position: center top;
       }
 
@@ -648,6 +650,7 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        justify-content: flex-start;
         min-height: 46px;
         min-width: 0;
         border: 1px solid var(--line);
@@ -662,6 +665,11 @@
       .check-grid input {
         accent-color: var(--clay);
         flex: 0 0 auto;
+        width: 18px;
+        min-height: 18px;
+        height: 18px;
+        margin: 0;
+        padding: 0;
       }
 
       .site-footer {
@@ -798,8 +806,8 @@
     <main>
       <section class="hero" id="home">
         <img
-          src="assets/salon-lounge.jpeg"
-          alt="Grand Collective salon lounge with cream sofa, green accents, plants, and artwork"
+          src="assets/home-background.jpeg"
+          alt="Grand Collective salon lounge with green chairs, cream sofa, plants, and artwork"
         />
         <div class="shell hero-content">
           <p class="eyebrow">More than a salon</p>
@@ -917,6 +925,7 @@
           <div class="card-grid">
             <article class="stylist-card">
               <img
+                class="abbie-brown-photo"
                 src="assets/abbie-profile.jpg"
                 alt="Abbie Brown, founder and stylist at Grand Collective"
               />
@@ -953,6 +962,7 @@
 
             <article class="stylist-card">
               <img
+                class="mary-brooks-photo"
                 src="assets/672676294_26354055414264459_793278864613499647_n.jpg"
                 alt="Mary Elizabeth Brooks"
               />
@@ -1009,7 +1019,7 @@
             <article class="stylist-card">
               <img
                 class="madison-photo"
-                src="assets/madison-richardson.png"
+                src="assets/madison-profile.png"
                 alt="Madison Richardson"
               />
               <div class="stylist-body">
@@ -1108,7 +1118,7 @@
             <a class="social-link" href="https://www.facebook.com/GrandCollective" target="_blank" rel="noopener noreferrer">
               Facebook <span>Grand Collective</span>
             </a>
-            <a class="social-link" href="mailto:hello@grandcollectivesalon.com">
+            <a class="social-link" href="mailto:Grand.collective.hsv@gmail.com">
               Email <span>Say Hello</span>
             </a>
           </div>
@@ -1215,7 +1225,8 @@
             <h3>Visit Us</h3>
             <div class="contact-list">
               <p><strong>Address:</strong> 3800 Governors Drive, Suite 109, Huntsville, AL 35805</p>
-              <p><strong>Email:</strong> hello@grandcollectivesalon.com</p>
+              <p><strong>Phone:</strong> <a href="tel:+12567421533">(256) 742-1533</a></p>
+              <p><strong>Email:</strong> <a href="mailto:Grand.collective.hsv@gmail.com">Grand.collective.hsv@gmail.com</a></p>
               <p><strong>Instagram:</strong> @grandcollective</p>
             </div>
             <a class="button" href="https://www.glossgenius.com" target="_blank" rel="noopener noreferrer">Book Now</a>
